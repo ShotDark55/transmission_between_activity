@@ -41,14 +41,32 @@ public class MainActivity extends AppCompatActivity {
         setup();
 
         login.setOnClickListener(v -> {
+
             String userText = username.getText().toString();
             String passText = password.getText().toString();
+            Intent intent = new Intent(context, MainActivity2.class);
+            Bundle bundle = new Bundle();
 
-            if(userText.isEmpty() || passText.isEmpty()) {
-                Toast.makeText(context, "please add user and password ",Toast.LENGTH_SHORT).show();
-            }else{
-                Intent intent = new Intent(context, MainActivity2.class);
-                startActivity(intent);
+            if (!userText.isEmpty()) {
+
+                bundle.putString("userKey",userText);
+
+                if (!passText.isEmpty()) {
+                        if (passText.length() >= 8) {
+
+                            bundle.putString("passKey",passText);
+                            intent.putExtras(bundle);
+
+                            startActivity(intent);
+                        }else {
+                            Toast.makeText(context,"min 8 char required ! ",Toast.LENGTH_SHORT).show();
+                        }
+
+                }else {
+                    Toast.makeText(context,"please add password required filed !",Toast.LENGTH_SHORT).show();
+                }
+            }else {
+                Toast.makeText(context,"please add username required filed !",Toast.LENGTH_SHORT).show();
             }
 
         });

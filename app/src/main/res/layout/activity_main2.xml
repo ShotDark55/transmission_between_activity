@@ -8,14 +8,27 @@
     tools:context=".MainActivity2">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome"
-        android:textSize="40sp"
-        android:textColor="#03A9F4"
+        android:textSize="20sp"
+        android:textColor="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:text="@string/load"
+        android:id="@+id/buttonLoad"
+        app:layout_constraintTop_toBottomOf="@id/textViewID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
